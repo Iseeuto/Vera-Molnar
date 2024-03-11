@@ -2,9 +2,11 @@
 
 using namespace std;
 
-int main(){
+int main(int argc, char* argv[]){
 
-    cout << "djoumalikatou";
+    for(int i=1; i<argc; i++){
+        cout << argv[i] << ' ';
+    }
 
     return 1;
 }
