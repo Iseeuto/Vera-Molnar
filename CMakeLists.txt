@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.15)
 
 project(projet)
 
-set(SRC main.cpp)
-set(HEADER header.hpp)
+set(SRC    src/main.cpp)
+set(HEADER src/utils/structures.hpp)
 
-add_executable(executable ${SRC} ${HEADER})
+add_executable(veramolnar ${SRC} ${HEADER})

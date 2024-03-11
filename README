@@ -1,0 +1,15 @@
+
+# Vera Molnar creator
+
+A brief description of what this project does and who it's for
+
+
+## Installation
+
+Compile & run project
+
+```bash
+  make build
+  ./veramolnar
+```
+    
