@@ -4,19 +4,6 @@
 #include "utils/test_svg.hpp"
 using namespace std;
 
-struct Point{
-    int x;
-    int y;
-};
-
-struct Forme{
-    string nom;
-    Point *p;
-    int Nb_Pts;
-    string color;
-    int rayon;
-};
-
 // void circle_to_svg(Point centre, float rayon,string fill ){
 //     cout << "<circle cx=\"" << centre.x << "\" cy=\"" << centre.y <<"\" r=\""<< rayon <<"\" fill=\""<< fill << "\"/>" ;
 //     cout << endl;
