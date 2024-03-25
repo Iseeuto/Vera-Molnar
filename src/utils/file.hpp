@@ -6,10 +6,10 @@ using std::string;
 #ifndef FILE_HPP
 #define FILE_HPP
 
-void saveFigure(Forme F, string nomFichier);
+void object_to_file(Forme F, string nomFichier);
 
-string* parseArguments(string s, int* nbArg, char separator = ' ');
+string* parseArguments(string s, int* nbArg, char separator);
 
-Forme loadFigure(string nomFichier);
+Forme file_to_object(string nomFichier);
 
 #endif
