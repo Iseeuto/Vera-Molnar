@@ -40,10 +40,10 @@ string canvas_to_svg(int width, int height, Forme *f, int N){
     
     string str = "<svg height=\"" + to_string(height) + "\" width=\"" + to_string(width) +  "\" xmlns=\"http://www.w3.org/2000/svg\">";
     for(int i=0;i<N;i++){
-    if(f[i].nom == "cercle"){
+    if(f[i].type == Cercle){
         str += circle_to_svg(f[i].p[0],f[i].rayon,f[i].color);
     }
-    if(f[i].nom == "polygone"){
+    if(f[i].type == Polygone){
         str+=polygon_to_svg(f[i].Nb_Pts,f[i].p,f[i].color);
     }}
 
@@ -99,6 +99,8 @@ void canvas_to_file_exemple(int width, int height, Forme *f, int N,string nomFic
     Fichier << "</html>" << endl;
 }
 
+/*
+
 int main(int arg, char* argv[]){
 
     int width = stoi(argv[3]) ;int height = stoi(argv[2]); string NomFic = argv[1];
@@ -126,3 +128,5 @@ int main(int arg, char* argv[]){
 
     return 1;
 }
+
+*/

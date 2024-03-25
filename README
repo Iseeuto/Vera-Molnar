@@ -1,7 +1,7 @@
 
 # Vera Molnar creator
 
-A brief description of what this project does and who it's for
+Pour créer des jolies oeuvres d'art
 
 
 ## Installation
@@ -9,7 +9,10 @@ A brief description of what this project does and who it's for
 Compile & run project
 
 ```bash
-  make build
-  ./veramolnar
+  cd build && cmake . && make && cd .. && .\veramolnar
 ```
     
+## Authors
+
+- REPORT Tanguy
+- PRUVOST Benjamin
