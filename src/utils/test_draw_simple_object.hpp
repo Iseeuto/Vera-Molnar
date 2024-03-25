@@ -14,6 +14,6 @@ void afficher_forme(Forme F);
 
 string simpleObject_to_svg(Forme F);
 
-void copySimpleObject(Forme F, Forme* copie);
+void copy_simple_object(Forme F, Forme* copie);
 
 #endif

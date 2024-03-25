@@ -5,12 +5,14 @@ project(projet)
 set(SRC     src/test_svg.cpp 
             src/test_draw_simple_object.cpp
             src/file.cpp
+            src/test_draw_complex_object.cpp
 )
 
 set(HEADER  src/utils/structures.hpp 
             src/utils/test_svg.hpp 
             src/utils/test_draw_simple_object.hpp
             src/utils/file.hpp
+            src/utils/test_draw_complex_object.hpp
 )
 
 set(EXECUTABLE_OUTPUT_PATH ../)

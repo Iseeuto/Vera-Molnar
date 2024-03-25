@@ -21,4 +21,9 @@ struct Forme{
     int rayon;
 };
 
+struct FormeComplexe{
+    Forme* formes;
+    int nbFormes;
+};
+
 #endif

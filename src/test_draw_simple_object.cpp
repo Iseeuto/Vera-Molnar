@@ -51,7 +51,7 @@ string simpleObject_to_svg(Forme F){
     return "";
 }
 
-void copySimpleObject(Forme F, Forme* copie){
+void copy_simple_object(Forme F, Forme* copie){
     copie->type = F.type;
     copie->color = F.color;
     copie->Nb_Pts = F.Nb_Pts;

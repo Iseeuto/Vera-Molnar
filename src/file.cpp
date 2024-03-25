@@ -81,15 +81,10 @@ Forme file_to_object(string nomFichier){
     return F;
 };
 
-int main(){
+// int main(){
 
-    Forme F = file_to_object("test.txt");
-    afficher_forme(F);
+//     Forme F = file_to_object("test.txt");
+//     afficher_forme(F);
 
-    // Point* tab2 = new Point[4];
-    // tab2[0] = {1, 1}; tab2[1] = {2, 1}; tab2[2] = {2, 2}; tab2[3] = {1, 2};
-    // Forme F2 = init_object(Polygone, 4, tab2, "green");
-    // saveFigure(F2, "F2.txt");
-
-    return 1;
-}
+//     return 1;
+// }
