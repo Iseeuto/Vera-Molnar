@@ -6,4 +6,4 @@ build/*
 # Files
 test.html
 veramolnar.exe
-test.txt
+**/*test*.txt

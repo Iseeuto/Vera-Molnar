@@ -43,7 +43,7 @@ string canvas_to_svg(int width, int height, Forme *f, int N){
     if(f[i].type == Cercle){
         str += circle_to_svg(f[i].p[0],f[i].rayon,f[i].color);
     }
-    if(f[i].type == Polygone){
+    else if(f[i].type == Polygone){
         str+=polygon_to_svg(f[i].Nb_Pts,f[i].p,f[i].color);
     }}
 
@@ -79,6 +79,22 @@ void canvas_to_file(int width, int height, Forme *f, int N,string nomFic){
     Fichier << "<html>" << endl;
     Fichier << "<body>" << endl;
     Fichier << canvas_to_svg(width,height,f,N);
+    Fichier << "</html>" << endl;
+}
+
+void canvas_to_file_complex(int width, int height, FormeComplexe *FC, int N, string nomFic){
+    ofstream Fichier(nomFic);
+    Fichier << "<!DOCTYPE html>" << endl;
+    Fichier << "<html>" << endl;
+    Fichier << "<body>" << endl;
+    Fichier << "<svg>";
+    for(int i=0; i<N; i++){
+        Forme f = FC->formes[i];
+        if(f.type == Cercle){ Fichier << circle_to_svg(f.p[0], f.rayon, f.color); }
+        else if(f.type == Polygone) { Fichier << polygon_to_svg(f.Nb_Pts, f.p, f.color); }
+    }
+    Fichier << "</svg>" << endl;
+    Fichier << "</body>" << endl;
     Fichier << "</html>" << endl;
 }
 

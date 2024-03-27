@@ -6,6 +6,9 @@ set(SRC     src/test_svg.cpp
             src/test_draw_simple_object.cpp
             src/file.cpp
             src/test_draw_complex_object.cpp
+            src/test_draw_simple_object_html.cpp
+            src/test_draw_multiple_object.cpp
+            src/test_draw_multiple_object_from_file.cpp
 )
 
 set(HEADER  src/utils/structures.hpp 
