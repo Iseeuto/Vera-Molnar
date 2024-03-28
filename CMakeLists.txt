@@ -9,6 +9,8 @@ set(SRC     src/test_svg.cpp
             src/test_draw_simple_object_html.cpp
             src/test_draw_multiple_object.cpp
             src/test_draw_multiple_object_from_file.cpp
+            src/canvas.cpp
+            src/test_draw_none_canvas.cpp
 )
 
 set(HEADER  src/utils/structures.hpp 
@@ -16,6 +18,7 @@ set(HEADER  src/utils/structures.hpp
             src/utils/test_draw_simple_object.hpp
             src/utils/file.hpp
             src/utils/test_draw_complex_object.hpp
+            src/utils/canvas.hpp
 )
 
 set(EXECUTABLE_OUTPUT_PATH ../)

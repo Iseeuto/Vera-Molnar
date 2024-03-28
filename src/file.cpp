@@ -139,9 +139,3 @@ void composedObject_to_file(FormeComplexe FC, string file){
         if(i+1 < FC.nbFormes){ Fichier << '\n'; }
     }
 }
-
-int main(){
-    FormeComplexe FC = file_to_composedObject("test.txt");
-
-    composedObject_to_file(FC, "test2.txt");
-}
