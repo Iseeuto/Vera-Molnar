@@ -45,13 +45,13 @@ string* parseArguments(string s, int* nbArg, char separator){
 } 
 
 Forme args_to_object(string* args, int N){
+
     Forme F;
     int _n;
     if(args[0] == "Cercle"){
         F.type = Cercle;
         F.Nb_Pts = 1;
         F.p = new Point[1];
-        F.color = args[N-1];
         F.rayon = stoi(args[2]);
 
         string* coord = parseArguments(args[1], &_n, '.');
@@ -68,8 +68,9 @@ Forme args_to_object(string* args, int N){
             F.p[i] = {stoi(coord[0]), stoi(coord[1])};
             delete[] coord;
         }
-        F.color = args[N-1];
     }
+
+    F.color = args[N-2];
 
     delete[] args;
 

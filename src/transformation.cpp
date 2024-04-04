@@ -9,13 +9,25 @@ int getCoordSimpleObject(Forme F, Arguments coord, Arguments m){
     int _coord = (m==MIN) ? INT_MAX : INT_MIN;
 
     for(int i=0; i<F.Nb_Pts; i++){
-        if(coord == x){
+        if(F.type == Polygone){
+            if(coord == x){
             if(m == MIN){ _coord = (F.p[i].x < _coord) ? F.p[i].x : _coord; }
             else{ _coord = (F.p[i].x > _coord) ? F.p[i].x : _coord; }
+            }
+            else{
+                if(m == MIN){ _coord = (F.p[i].y < _coord) ? F.p[i].y : _coord; }
+                else{ _coord = (F.p[i].y > _coord) ? F.p[i].y : _coord; }
+            }
         }
         else{
-            if(m == MIN){ _coord = (F.p[i].y < _coord) ? F.p[i].y : _coord; }
-            else{ _coord = (F.p[i].y > _coord) ? F.p[i].y : _coord; }
+            if(coord == x){
+            if(m == MIN){ _coord = (F.p[i].x-F.rayon < _coord) ? F.p[i].x-F.rayon : _coord; }
+            else{ _coord = (F.p[i].x+F.rayon > _coord) ? F.p[i].x+F.rayon : _coord; }
+            }
+            else{
+                if(m == MIN){ _coord = (F.p[i].y-F.rayon < _coord) ? F.p[i].y-F.rayon : _coord; }
+                else{ _coord = (F.p[i].y+F.rayon > _coord) ? F.p[i].y+F.rayon : _coord; }
+            }
         }
     }
 
