@@ -70,7 +70,7 @@ Forme args_to_object(string* args, int N){
         }
     }
 
-    F.color = args[N-2];
+    F.color = args[N-1];
 
     delete[] args;
 

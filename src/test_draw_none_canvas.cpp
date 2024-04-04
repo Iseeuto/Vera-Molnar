@@ -17,7 +17,5 @@ int main(){
 
     Point P = findCenterComplexObject(FC);
 
-    cout << P.x << " " << P.y << " " << FC.formes[0].color;
-
     return 1;
 }
