@@ -26,4 +26,10 @@ struct FormeComplexe{
     int nbFormes;
 };
 
+struct Canvas{
+    int width, height;
+    FormeComplexe FC;
+    int Rep_col, Rep_lig;
+};
+
 #endif
