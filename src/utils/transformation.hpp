@@ -18,6 +18,8 @@ Point findCenterComplexObject(FormeComplexe FC);
 
 void rotate_object(Forme *F,float angle,Point centre);
 
+void rotate_objectComplexe(FormeComplexe *FC, float angle);
+
 float deg_to_rad(float n);
 
 void colorChange_ComposedObject(FormeComplexe *FC, string color);
@@ -26,7 +28,6 @@ void colorChange_object(Forme *f,string color);
 
 void dilate_ComposedObject(FormeComplexe *FC, int k);
 
-void dilate_object(Forme *f,int k);
-
+void dilate_object(Forme *f,int k,Point centre);
 
 #endif

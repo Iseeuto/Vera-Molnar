@@ -84,8 +84,7 @@ float deg_to_rad(float n){
 }
 
 void rotate_object(Forme *F,float angle,Point centre){
-    int degRad = deg_to_rad(angle);
-    if(F->type = Polygone){
+    float degRad = deg_to_rad(angle);
         for(int i=0; i<F->Nb_Pts;i++){
             Point p = F->p[i];
             Point newPt;
@@ -93,16 +92,22 @@ void rotate_object(Forme *F,float angle,Point centre){
             newPt.y = (p.x - centre.x) * (-sin(degRad)) + (p.y - centre.y) * cos(degRad) + centre.y;
             F->p[i] = newPt ;
         }   
+}
+
+void rotate_objectComplexe(FormeComplexe *FC, float angle){
+    Point centre = findCenterComplexObject(*FC);
+    for(int i=0;i<FC->nbFormes;i++){
+        rotate_object(&FC->formes[i],angle,centre);
     }
 }
 
-void dilate_object(Forme *f,int k){
+void dilate_object(Forme *f,int k, Point centre){
     
     if(f->type == Cercle){
         f->rayon = f->rayon * k;
     }
     if(f->type == Polygone){
-        Point centre = findCenterSimpleObject(*f);
+        
         for(int i = 0;i<f->Nb_Pts;i++){
             f->p[i].x = centre.x + k * (f->p[i].x - centre.x);
             f->p[i].y = centre.y + k * (f->p[i].y - centre.y);
@@ -111,17 +116,10 @@ void dilate_object(Forme *f,int k){
 }
 
 void dilate_ComposedObject(FormeComplexe *FC, int k){
-    Point centre ;
-    for(int i=0; i<FC->nbFormes;i++){
-        if(FC->formes[i].type == Cercle){
-            FC->formes[i].rayon = FC->formes[i].rayon * k;}
-        if(FC->formes[i].type == Polygone){
-            for(int j = 0;j<FC->formes[i].Nb_Pts;j++){
-                FC->formes[i].p[j].x = centre.x + k * (FC->formes[i].p[j].x - centre.x);
-                FC->formes[i].p[j].y = centre.y + k * (FC->formes[i].p[j].y - centre.y);
-        }
+    for(int i=0;i<FC->nbFormes;i++){
+        Point centre = findCenterSimpleObject(FC->formes[i]);
+        dilate_object(&(FC->formes[i]),k,centre);
     }
-}
 }
 
 void colorChange_object(Forme *f,string color){

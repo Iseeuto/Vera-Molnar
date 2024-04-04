@@ -15,7 +15,10 @@ int main(){
 
     canvas_to_file_complex(800, 800, &FC, FC.nbFormes, "test.html");
 
-    
+    rotate_objectComplexe(&FC,45);
 
+    canvas_to_file_complex(800, 800, &FC, FC.nbFormes, "test2.html");
+
+    
     return 1;
 }
