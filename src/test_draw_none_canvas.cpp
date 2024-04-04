@@ -11,11 +11,11 @@ using namespace std;
 int main(){
     FormeComplexe FC;
 
-    FC = file_to_composedObject("test.txt");
+    FC = file_to_composedObject("rectangle.txt");
 
     canvas_to_file_complex(800, 800, &FC, FC.nbFormes, "test.html");
 
-    Point P = findCenterComplexObject(FC);
+    
 
     return 1;
 }

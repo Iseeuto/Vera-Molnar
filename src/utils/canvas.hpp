@@ -16,7 +16,5 @@ void translate_composedObject(FormeComplexe *FC, int _x, int _y);
 
 string canvas_composed_to_svg(Canvas C);
 
-void rotate_object(Forme *F,float angle,Point centre);
 
-float deg_to_rad(float n);
 #endif

@@ -6,4 +6,5 @@ build/*
 # Files
 test.html
 veramolnar.exe
+rectangle.txt
 **/*test*.txt

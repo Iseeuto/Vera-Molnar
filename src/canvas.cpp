@@ -2,7 +2,6 @@
 #include "utils/canvas.hpp"
 #include "utils/test_draw_complex_object.hpp"
 #include "utils/test_svg.hpp"
-#include <cmath>
 
 using namespace std;
 
@@ -49,25 +48,3 @@ string canvas_composed_to_svg(Canvas C){
     return final;
 }
 
-float deg_to_rad(float n){
-    float N;
-    N = n * (M_PI/180) ;
-    return N;
-}
-
-void rotate_object(Forme *F,float angle,Point centre){
-    int degRad = deg_to_rad(angle);
-    if(F->type = Polygone){
-        for(int i=0; i<F->Nb_Pts;i++){
-            Point p = F->p[i];
-            Point newPt;
-            newPt.x = (p.x - centre.x) * cos((degRad)) + (p.y - centre.y) * sin(degRad) + centre.x;
-            newPt.y = (p.x - centre.x) * (-sin(degRad)) + (p.y - centre.y) * cos(degRad) + centre.y;
-            F->p[i] = newPt ;
-        }   
-    }
-}
-
-void rotate_composedObject(FormeComplexe FC){
-    
-}
