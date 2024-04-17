@@ -18,6 +18,8 @@ string example3_to_svg(int width, int height, Forme *f, int N);
 
 string example1_to_svg(int width, int height, Forme *f, int N);
 
+void svg_to_html(string file, string svg);
+
 void canvas_to_file(int width, int height, Forme *f, int N,string nomFic);
 
 void canvas_to_file_complex(int width, int height, FormeComplexe *FC, int N, string nomFic);

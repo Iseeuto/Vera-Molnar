@@ -12,6 +12,7 @@ set(SRC     src/test_svg.cpp
             src/canvas.cpp
             src/test_draw_none_canvas.cpp
             src/transformation.cpp
+            src/test_draw_trait_Vera.cpp
 )
 
 set(HEADER  src/utils/structures.hpp 

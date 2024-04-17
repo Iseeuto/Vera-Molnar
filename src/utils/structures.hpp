@@ -8,17 +8,17 @@ using std::string;
 enum Figure { Cercle, Polygone };
 
 struct Point{
-    int x;
-    int y;
+    float x;
+    float y;
 };
 
 struct Forme{
     Figure type;
     string nom;
     Point *p;
-    int Nb_Pts; 
+    int Nb_Pts = 1; 
     string color;
-    int rayon;
+    float rayon;
 };
 
 struct FormeComplexe{

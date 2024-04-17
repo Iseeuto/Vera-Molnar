@@ -1,21 +1,25 @@
 #include<iostream>
+#include<random>
 #include "utils/canvas.hpp"
 #include "utils/test_draw_complex_object.hpp"
 #include "utils/test_svg.hpp"
 #include "utils/transformation.hpp"
 
+
 using namespace std;
 
+int alea(int a, int b){
+    std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<> dist(a, b);
+
+    return dist(rng);
+}
+
 void translate_object(Forme *F, int _x, int _y){
-    if(F->type == Cercle){
-        F->p[0].x += _x;
-        F->p[0].y += _y;
-    }
-    else if(F->type == Polygone){
-        for(int i=0; i<F->Nb_Pts; i++){
-            F->p[i].x += _x;
-            F->p[i].y += _y;
-        }
+    for(int i=0; i<F->Nb_Pts; i++){
+        F->p[i].x += _x;
+        F->p[i].y += _y;
     }
 }
 
@@ -58,9 +62,11 @@ string canvas_transform_composed_to_svg(Canvas C){
         for(int x=0; x<C.Rep_col; x++){
             FormeComplexe temp;
             copy_complex_object(C.FC, &temp);
-            translate_composedObject(&temp, x*space_x, y*space_y);
 
-            rotate_objectComplexe(&temp, 2*(x+(C.Rep_col*y)));
+            rotate_objectComplexe(&(C.FC), 45);
+            dilate_ComposedObject(&(C.FC), 1);
+
+            translate_composedObject(&temp, x*space_x, y*space_y);
 
             for(int i=0; i<temp.nbFormes; i++){
                 if(temp.formes[i].type == Cercle){
@@ -76,3 +82,32 @@ string canvas_transform_composed_to_svg(Canvas C){
     return final;
 }
 
+string canvas_list_transform_simpleObject_to_svg(FormeComplexe FC, Forme F, Transformations T[], int N){
+
+    string colors[6] = {"purple", "blue", "red", "green", "yellow", "brown"};
+
+    Forme copie;
+    copy_simple_object(F, &copie);
+
+    for(int i=0; i<N; i++){
+        switch (T[i])
+        {
+        case Dilate:
+            dilate_object(&copie, alea(0, 3), findCenterComplexObject(FC));
+            break;
+        
+        case Rotate:
+            rotate_object(&copie, alea(1,360), findCenterComplexObject(FC));
+            break;
+
+        case ChangeColor:
+            colorChange_object(&copie, colors[alea(0,5)]);
+            break;
+        }
+    }
+
+    if(F.type == Cercle){
+        return circle_to_svg(copie.p[0], copie.rayon, copie.color);
+    }
+    return polygon_to_svg(copie.Nb_Pts, copie.p, copie.color);
+}

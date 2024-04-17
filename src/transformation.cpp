@@ -7,7 +7,7 @@ using namespace std;
 
 
 // TODO : Optimiser
-int getCoordSimpleObject(Forme F, Arguments coord, Arguments m){
+float getCoordSimpleObject(Forme F, Arguments coord, Arguments m){
     int _coord = (m==MIN) ? INT_MAX : INT_MIN;
 
     for(int i=0; i<F.Nb_Pts; i++){
@@ -36,7 +36,7 @@ int getCoordSimpleObject(Forme F, Arguments coord, Arguments m){
     return _coord;
 }
 
-int getCoordComplexObject(FormeComplexe FC, Arguments coord, Arguments m){
+float getCoordComplexObject(FormeComplexe FC, Arguments coord, Arguments m){
     int _coord = (m == MIN) ? INT_MAX : INT_MIN;
 
     for(int i=0; i<FC.nbFormes; i++){
@@ -101,23 +101,21 @@ void rotate_objectComplexe(FormeComplexe *FC, float angle){
     }
 }
 
-void dilate_object(Forme *f,int k, Point centre){
+void dilate_object(Forme *f,float k, Point centre){
+
+    for(int i = 0;i<f->Nb_Pts;i++){
+            f->p[i].x = centre.x + k * (f->p[i].x - centre.x);
+            f->p[i].y = centre.y + k * (f->p[i].y - centre.y);
+    }
     
     if(f->type == Cercle){
         f->rayon = f->rayon * k;
     }
-    if(f->type == Polygone){
-        
-        for(int i = 0;i<f->Nb_Pts;i++){
-            f->p[i].x = centre.x + k * (f->p[i].x - centre.x);
-            f->p[i].y = centre.y + k * (f->p[i].y - centre.y);
-        }
-    }
 }
 
-void dilate_ComposedObject(FormeComplexe *FC, int k){
+void dilate_ComposedObject(FormeComplexe *FC, float k){
+    Point centre = findCenterComplexObject(*FC);
     for(int i=0;i<FC->nbFormes;i++){
-        Point centre = findCenterSimpleObject(FC->formes[i]);
         dilate_object(&(FC->formes[i]),k,centre);
     }
 }
@@ -130,4 +128,10 @@ void colorChange_ComposedObject(FormeComplexe *FC, string color){
     for(int i=0;i<FC->nbFormes;i++){
         FC->formes[i].color = color;
     }
+}
+
+void transform_simple_object(Forme *f, transform t, Point center){
+    dilate_object(f, t.size, center);
+    rotate_object(f, t.angle, center);
+    if(t.color != ""){ colorChange_object(f, t.color); }
 }

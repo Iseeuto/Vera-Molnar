@@ -56,7 +56,7 @@ Forme args_to_object(string* args, int N){
 
         string* coord = parseArguments(args[1], &_n, '.');
 
-        F.p[0] = {stoi(coord[0]), stoi(coord[1])};
+        F.p[0] = {stof(coord[0]), stof(coord[1])};
         delete[] coord;
     }
     else if(args[0] == "Polygone"){
@@ -65,7 +65,7 @@ Forme args_to_object(string* args, int N){
         F.p = new Point[F.Nb_Pts];
         for(int i=0; i<F.Nb_Pts; i++){
             string* coord = parseArguments(args[2+i], &_n, '.');
-            F.p[i] = {stoi(coord[0]), stoi(coord[1])};
+            F.p[i] = {stof(coord[0]), stof(coord[1])};
             delete[] coord;
         }
     }

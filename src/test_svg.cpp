@@ -73,6 +73,16 @@ string example1_to_svg(int width, int height, Forme *f, int N){
     return str;
 }
 
+void svg_to_html(string file, string svg){
+    ofstream Fichier("test.html");
+    Fichier << "<!DOCTYPE html>" << endl;
+    Fichier << "<html>" << endl;
+    Fichier << "<body>" << endl;
+    Fichier << svg;
+    Fichier << "</body>" << endl;
+    Fichier << "</html>" << endl;
+}
+
 void canvas_to_file(int width, int height, Forme *f, int N,string nomFic){
     ofstream Fichier(nomFic);
     Fichier << "<!DOCTYPE html>" << endl;

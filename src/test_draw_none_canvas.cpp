@@ -8,20 +8,13 @@
 
 using namespace std;
 
-int main(){
-    Canvas C;
-    C.FC = file_to_composedObject("test.txt");
-    C.height = 8000; C.width = 800;
-    C.Rep_col = 1; C.Rep_lig = 100;
+// int main(){
+//     Canvas C;
+//     C.FC = file_to_composedObject("test.txt");
+//     C.height = 745; C.width = 1300;
+//     C.Rep_col = 17; C.Rep_lig = 10;
 
-    ofstream Fichier("test.html");
-    Fichier << "<!DOCTYPE html>" << endl;
-    Fichier << "<html>" << endl;
-    Fichier << "<body>" << endl;
-    Fichier << canvas_transform_composed_to_svg(C);
-    Fichier << "</body>" << endl;
-    Fichier << "</html>" << endl;
+//     svg_to_html("test.html", canvas_transform_composed_to_svg(C));
 
-    
-    return 1;
-}
+//     return 1;
+// }

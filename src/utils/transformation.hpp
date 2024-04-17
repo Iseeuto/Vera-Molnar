@@ -8,9 +8,22 @@ using namespace std;
 
 enum Arguments {MIN, MAX, x, y};
 
-int getCoordSimpleObject(Forme F, Arguments coord, Arguments m);
+enum Transformations {Dilate, Rotate, ChangeColor};
 
-int getCoordComplexObject(FormeComplexe FC, Arguments coord, Arguments m);
+struct transform{
+    float angle = 0;
+    float size = 1;
+    string color;
+};
+
+struct listTransform{
+    transform t;
+    listTransform* next = nullptr;
+};
+
+float getCoordSimpleObject(Forme F, Arguments coord, Arguments m);
+
+float getCoordComplexObject(FormeComplexe FC, Arguments coord, Arguments m);
 
 Point findCenterSimpleObject(Forme F);
 
@@ -26,8 +39,10 @@ void colorChange_ComposedObject(FormeComplexe *FC, string color);
 
 void colorChange_object(Forme *f,string color);
 
-void dilate_ComposedObject(FormeComplexe *FC, int k);
+void dilate_ComposedObject(FormeComplexe *FC, float k);
 
-void dilate_object(Forme *f,int k,Point centre);
+void dilate_object(Forme *f,float k,Point centre);
+
+void transform_simple_object(Forme *f, transform t, Point center);
 
 #endif
