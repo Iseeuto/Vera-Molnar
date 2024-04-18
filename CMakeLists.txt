@@ -13,6 +13,9 @@ set(SRC     src/test_svg.cpp
             src/test_draw_none_canvas.cpp
             src/transformation.cpp
             src/test_draw_trait_Vera.cpp
+            src/carre.cpp
+            src/carre_alea.cpp
+            src/test_file_to_transform.cpp
 )
 
 set(HEADER  src/utils/structures.hpp 

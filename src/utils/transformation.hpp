@@ -21,6 +21,11 @@ struct listTransform{
     listTransform* next = nullptr;
 };
 
+struct listTransformComposed{
+    listTransform *l;
+    int N;
+};
+
 float getCoordSimpleObject(Forme F, Arguments coord, Arguments m);
 
 float getCoordComplexObject(FormeComplexe FC, Arguments coord, Arguments m);

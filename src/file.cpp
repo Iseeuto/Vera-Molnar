@@ -4,6 +4,7 @@
 #include "utils/file.hpp"
 #include "utils/structures.hpp"
 #include "utils/test_draw_simple_object.hpp"
+#include "utils/transformation.hpp"
 
 using namespace std;
 
@@ -139,4 +140,37 @@ void composedObject_to_file(FormeComplexe FC, string file){
         Fichier << f.color;
         if(i+1 < FC.nbFormes){ Fichier << '\n'; }
     }
+}
+
+listTransformComposed file_to_transform(string file){
+    listTransformComposed LTC;
+    int N;
+
+    ifstream Fichier(file);
+    std::stringstream ss;
+    ss << Fichier.rdbuf();
+
+    string* transformations = parseArguments(ss.str(), &N, '\n');
+    LTC.N = N;
+    LTC.l = new listTransform[N];
+
+    int nbArgs;
+    for(int i=0; i<N; i++){
+        string* args = parseArguments(transformations[i], &nbArgs, ' ');
+        listTransform *current = &(LTC.l[stoi(args[0])]);
+        for(int j=0; j<(nbArgs-1)/2; j++){
+            if(args[1+2*j] == "dilate"){
+                current->t.size = stof(args[2+2*j]);
+            }
+            else if(args[1+2*j] == "rotate"){
+                current->t.angle = stof(args[2+2*j]);
+            }
+            else if(args[1+2*j] == "color"){
+                current->t.color = args[2+2*j];
+            }
+            if(j+1 < (nbArgs-1)/2){ current->next = new listTransform; current = current->next; }
+        }
+    }
+
+    return LTC;
 }

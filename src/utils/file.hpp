@@ -1,5 +1,6 @@
 #include<iostream>
 #include "structures.hpp"
+#include "transformation.hpp"
 
 using std::string;
 
@@ -19,5 +20,7 @@ FormeComplexe files_to_composedObject(string* files, int N);
 FormeComplexe file_to_composedObject(string file);
 
 void composedObject_to_file(FormeComplexe FC, string file);
+
+listTransformComposed file_to_transform(string file);
 
 #endif
