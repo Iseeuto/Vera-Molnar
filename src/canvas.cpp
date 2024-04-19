@@ -1,8 +1,8 @@
 #include<iostream>
 #include<random>
 #include "utils/canvas.hpp"
-#include "utils/test_draw_complex_object.hpp"
-#include "utils/test_svg.hpp"
+#include "utils/complex_object.hpp"
+#include "utils/svg.hpp"
 #include "utils/transformation.hpp"
 
 

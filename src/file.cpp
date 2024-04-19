@@ -3,7 +3,7 @@
 #include<sstream>
 #include "utils/file.hpp"
 #include "utils/structures.hpp"
-#include "utils/test_draw_simple_object.hpp"
+#include "utils/simple_object.hpp"
 #include "utils/transformation.hpp"
 
 using namespace std;

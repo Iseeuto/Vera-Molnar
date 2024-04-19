@@ -5,11 +5,8 @@ build/*
 
 # Files
 test.html
-veramolnar.exe
+trandformation.txt
+*.exe
 rectangle.txt
-<<<<<<< HEAD
-**/*test*.txt
-=======
 **/*test*.txt
 veramolnar
->>>>>>> 64ea629233399c4742d3d277b9b6166b643476a1

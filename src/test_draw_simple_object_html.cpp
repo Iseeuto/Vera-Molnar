@@ -1,10 +1,9 @@
 #include<iostream>
-#include"utils/test_svg.hpp"
+#include"utils/svg.hpp"
 #include"utils/file.hpp"
 
 using namespace std;
 
-/*
 int main(int argc, char* argv[]){
 
     if(argc < 2){ cout << "Arguments manquants"; return 0; }
@@ -15,4 +14,3 @@ int main(int argc, char* argv[]){
 
     return 1;
 }
-*/

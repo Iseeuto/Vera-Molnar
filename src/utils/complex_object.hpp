@@ -1,6 +1,6 @@
 #include<iostream>
 #include "structures.hpp"
-#include "test_draw_simple_object.hpp"
+#include "simple_object.hpp"
 
 using std::string;
 

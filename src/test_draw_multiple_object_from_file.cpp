@@ -1,11 +1,10 @@
 #include<iostream>
 #include "utils/structures.hpp"
-#include "utils/test_svg.hpp"
+#include "utils/svg.hpp"
 #include "utils/file.hpp"
 
 using namespace std;
 
-/*
 int main(int argc, char* argv[]){
 
     int N = argc-1;
@@ -21,4 +20,3 @@ int main(int argc, char* argv[]){
 
     return 1;
 }
-*/

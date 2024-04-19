@@ -1,11 +1,9 @@
 #include<iostream>
 #include "utils/structures.hpp"
-#include "utils/test_draw_complex_object.hpp"
+#include "utils/complex_object.hpp"
 
 using namespace std;
 
-
-/*
 int main(){
 
     Forme* tab = new Forme[2];
@@ -28,4 +26,3 @@ int main(){
 
     return 1;
 }
-*/
