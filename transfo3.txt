@@ -1,0 +1,6 @@
+0 dilate 1
+1 dilate .9
+2 dilate .8
+3 dilate .7
+4 dilate .6
+5 dilate .5

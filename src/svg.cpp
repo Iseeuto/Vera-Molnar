@@ -74,7 +74,7 @@ string example1_to_svg(int width, int height, Forme *f, int N){
 }
 
 void svg_to_html(string file, string svg){
-    ofstream Fichier("test.html");
+    ofstream Fichier(file);
     Fichier << "<!DOCTYPE html>" << endl;
     Fichier << "<html>" << endl;
     Fichier << "<body>" << endl;
