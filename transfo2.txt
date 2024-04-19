@@ -1,0 +1,6 @@
+0 dilate 1
+1 dilate .9 rotate 36
+2 dilate .8 rotate 72
+3 dilate .7 rotate 108
+4 dilate .6 rotate 144
+5 dilate .5 rotate 180

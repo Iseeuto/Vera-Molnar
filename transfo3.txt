@@ -1,6 +1,5 @@
-0 dilate 1
-1 dilate .9
-2 dilate .8
-3 dilate .7
-4 dilate .6
-5 dilate .5
+0 color lime
+1 rotate 45 color green
+2 color lime
+3 rotate 45 color green
+4 color lightgreen

@@ -1,0 +1,8 @@
+0 dilate 1
+1 rotate 45
+2 rotate 90
+3 rotate 135
+4 rotate 180
+5 rotate 225
+6 rotate 270
+7 rotate 315

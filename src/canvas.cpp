@@ -122,8 +122,10 @@ string canvas_to_svg_veramolnar(Canvas C, listTransformComposed LTC){
             FormeComplexe temp;
             copy_complex_object(C.FC, &temp);
             translate_composedObject(&temp, x*space_x, y*space_y);
-            for(int i=0; i<temp.nbFormes; i++){
+            for(int i=0; i<LTC.N; i++){
                 transform_complex_simple_object(&(temp.formes[i]), LTC.l[i], findCenterComplexObject(temp));
+            }
+            for(int i=0; i<temp.nbFormes; i++){
                 if(temp.formes[i].type == Cercle){
                     final += circle_to_svg(temp.formes[i].p[0], temp.formes[i].rayon, temp.formes[i].color);
                 }else{

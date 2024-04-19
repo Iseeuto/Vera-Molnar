@@ -1,0 +1,5 @@
+Polygone 4 0.45 100.45 100.55 0.55 black
+Polygone 4 0.45 100.45 100.55 0.55 black
+Polygone 4 45.0 45.100 55.100 55.0 black
+Polygone 4 45.0 45.100 55.100 55.0 black
+Cercle 50.50 20 white

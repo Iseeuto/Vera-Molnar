@@ -1,0 +1,3 @@
+Cercle 50.50 50 red
+Cercle 50.50 25 yellow
+Cercle 50.50 15 orange
