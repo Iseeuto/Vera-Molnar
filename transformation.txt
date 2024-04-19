@@ -1,3 +1,0 @@
-1 dilate 3 rotate 90
-2 rotate 90
-0 color red

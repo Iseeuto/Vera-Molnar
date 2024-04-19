@@ -135,3 +135,11 @@ void transform_simple_object(Forme *f, transform t, Point center){
     rotate_object(f, t.angle, center);
     if(t.color != ""){ colorChange_object(f, t.color); }
 }
+
+void transform_complex_simple_object(Forme *f, listTransform LT, Point center){
+    listTransform *ptr = &LT;
+    while(ptr != nullptr){
+        transform_simple_object(f, ptr->t, center);
+        ptr = ptr->next;
+    }
+}

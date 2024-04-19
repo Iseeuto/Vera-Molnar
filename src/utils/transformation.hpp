@@ -50,4 +50,6 @@ void dilate_object(Forme *f,float k,Point centre);
 
 void transform_simple_object(Forme *f, transform t, Point center);
 
+void transform_complex_simple_object(Forme *f, listTransform, Point center);
+
 #endif
