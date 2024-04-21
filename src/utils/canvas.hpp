@@ -19,4 +19,6 @@ string canvas_list_transform_simpleObject_to_svg(FormeComplexe FC, Forme F, Tran
 
 string canvas_to_svg_veramolnar(Canvas C, listTransformComposed LTC);
 
+string canvas_to_svg_veramolnar_good(Canvas C, listTransformComposed LTC);
+
 #endif

@@ -23,6 +23,7 @@ struct listTransform{
 
 struct listTransformComposed{
     listTransform *l;
+    int *initialized;
     int N;
 };
 

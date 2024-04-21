@@ -1,3 +1,11 @@
-Cercle 50.50 50 red
-Cercle 50.50 25 yellow
-Cercle 50.50 15 orange
+Polygone 4 0.0 100.0 100.100 0.100 black
+Cercle 50.50 50 #FF1616
+Cercle 55.50 45 #FF8B16
+Cercle 40.50 40 #FFED16
+Cercle 65.50 35 #AAFF16
+Cercle 30.50 30 #4BFF16
+Cercle 75.50 25 #16FF4E
+Cercle 20.50 20 #16FFBF
+Cercle 85.50 15 #16B8FF
+Cercle 10.50 10 #162BFF
+Cercle 95.50 5 #C716FF

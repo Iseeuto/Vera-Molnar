@@ -1,6 +1,4 @@
-0 dilate 1
-1 dilate .9 rotate 36
-2 dilate .8 rotate 72
-3 dilate .7 rotate 108
-4 dilate .6 rotate 144
-5 dilate .5 rotate 180
+0 color red dilate 1 color orange color yellow color limegreen color green color cyan color lightblue color blue dilate 1
+1 color blue rotate 20 color lightblue color cyan color green color limegreen color yellow color orange dilate 1 color red
+2 dilate 1
+3 color red rotate 20 color orange color yellow color limegreen color green color cyan color lightblue color blue dilate .9

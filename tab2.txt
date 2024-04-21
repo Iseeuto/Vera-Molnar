@@ -1,6 +1,4 @@
-Cercle 50.50 40 #FF0000
-Cercle 60.60 40 #FF2A2A
-Cercle 70.70 40 #FF6262
-Cercle 80.80 40 #FF9A9A
-Cercle 90.90 40 #FFBFBF
-Cercle 100.100 40 #FFE8E8
+Polygone 4 0.0 100.0 100.100 0.100 black
+Polygone 4 10.10 90.10 90.90 10.90 black
+Cercle 50.50 45 white
+Polygone 4 25.25 75.25 75.75 25.75 black

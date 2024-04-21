@@ -153,11 +153,16 @@ listTransformComposed file_to_transform(string file){
     string* transformations = parseArguments(ss.str(), &N, '\n');
     LTC.N = N;
     LTC.l = new listTransform[N];
+    LTC.initialized = new int[N];
+    for(int i=0; i<N; i++){ LTC.initialized[i] = 0; }
 
     int nbArgs;
     for(int i=0; i<N; i++){
         string* args = parseArguments(transformations[i], &nbArgs, ' ');
         listTransform *current = &(LTC.l[stoi(args[0])]);
+
+        LTC.initialized[stoi(args[0])] = 1; // to know which oject has a transformation
+
         for(int j=0; j<(nbArgs-1)/2; j++){
             if(args[1+2*j] == "dilate"){
                 current->t.size = stof(args[2+2*j]);

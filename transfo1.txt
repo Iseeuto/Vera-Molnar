@@ -1,6 +1,6 @@
-0 rotate 45
-1 rotate 54 dilate .9
-2 rotate 63 dilate .8
-3 rotate 72 dilate .7
-4 rotate 81 dilate .6
-5 rotate 90 dilate .5
+0 rotate 45 dilate .99
+1 rotate 54 dilate .99
+2 rotate 63 dilate .99
+3 rotate 72 dilate .99
+4 rotate 81 dilate .99
+5 rotate 90 dilate .99
